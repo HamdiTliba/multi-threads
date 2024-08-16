@@ -4,7 +4,7 @@ import {
   myHeavyTaskInMainThread,
   myHeavyTaskInWorkerThread,
   myLightTaskInMainThread,
-} from "@/actions";
+} from "@/server-actions/actions";
 
 const Buttons = () => (
   <div className="flex gap-3">

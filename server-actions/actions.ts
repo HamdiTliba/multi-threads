@@ -1,4 +1,4 @@
-import heavyTaskWorkerApi from "./action/heavyTaskWorker";
+import heavyTaskWorkerApi from "./heavyTaskWorker";
 
 export async function myHeavyTaskInMainThread() {
   console.log("Called myHeavyTaskInMainThread");
