@@ -1,17 +1,12 @@
 "use server";
 
-import { Worker, isMainThread } from "worker_threads";
 import path from "path";
+import { Worker, isMainThread } from "worker_threads";
 
-export default async function heavyTaskWorkerApi() {
+export default async function heavyTaskGeneralized(pathFile: any) {
   if (isMainThread) {
     return new Promise((resolve, reject) => {
-      const worker = new Worker(path.resolve("./server-actions/worker.ts"), {
-        workerData: {
-          task: "performSum",
-          targetValue: 10000000000,
-        },
-      });
+      const worker = new Worker(path.resolve(pathFile));
 
       worker.on("message", (result) => {
         resolve(result);

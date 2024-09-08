@@ -1,4 +1,4 @@
-import heavyTaskWorkerApi from "./heavyTaskWorker";
+import heavyTaskGeneralized from "./heavyTaskGeneralized";
 
 export async function myHeavyTaskInMainThread() {
   console.log("Called myHeavyTaskInMainThread");
@@ -19,7 +19,7 @@ export async function myLightTaskInMainThread() {
   return sum;
 }
 export async function myHeavyTaskInWorkerThread() {
-  const result = await heavyTaskWorkerApi();
+  const result = await heavyTaskGeneralized("./server-actions/worker.ts");
 
   console.log("Result from myHeavyTaskInWorkerThread:", result);
   return result;
